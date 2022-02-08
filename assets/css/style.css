@@ -1227,10 +1227,6 @@ scrollUp
   -webkit-box-shadow: 1px 1px 3px 0 #e7e7e7;
           box-shadow: 1px 1px 3px 0 #e7e7e7;
 }
-.single-product-grid:hover .product-thumbnail a img {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
 
 .section-title {
   margin-bottom: 2.5rem;

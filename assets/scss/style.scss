@@ -22,6 +22,8 @@ Version: 1.0
 #.hero-banner-area
 #.product-category-area
 #.cta-area
+#.primary-form
+#.offerte-gegevens-area
 
 */
 
@@ -95,6 +97,16 @@ Version: 1.0
     text-transform: capitalize;
     transition: $transition;
     text-align: center;
+    background-color: transparent;
+    &.bg-solid {
+        background-color: var(--black);
+        color: var(--white);
+        &:hover {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            color: var(--white);
+        }
+    }
     &:hover {
         color: var(--white);
         background-color: var(--black);
@@ -721,6 +733,9 @@ Version: 1.0
 --------------------------*/
 .count-text-btn {
     display: flex;
+    width: 100%;
+    padding: 0;
+    border: none;
     .count-number {
         @include flex-position(flex, center, center);
         text-align: center;
@@ -732,6 +747,7 @@ Version: 1.0
         font-size: 2.2rem;
         font-weight: 400;
         color: #1A1A1A;
+        border: none;
     }
     .button-text {
         flex: 1;
@@ -1337,5 +1353,116 @@ Version: 1.0
     }
     .cta-area .button-black-white {
         max-width: 100%;
+    }
+}
+
+/*-------------------------
+#.primary-form
+--------------------------*/
+.primary-form {
+    background-color: #F8F8F8;
+    padding: 6rem;
+    border-radius: .5rem;
+    box-shadow: 1px 1px 3px 0 #e7e7e7;
+    .form-title {
+        margin-bottom: 2.5rem;
+        font-size: 3.2rem;
+        font-weight: 500;
+        text-transform: capitalize;
+        color: #141414;
+    }
+    .form-group {
+        margin-bottom: 2rem;
+        .form-control {
+            width: 100%;
+            height: 5.6rem;
+            border-radius: 0;
+            background-color: transparent;
+            padding: 1rem 1.5rem;
+            font-family: $bodyFont;
+            color: #262529;
+            font-size: 15px;
+            font-weight: 400;
+            box-shadow: none;
+            border: 1px solid #dad8d8;
+            &::placeholder {
+                color: #262529;
+                opacity: 1; 
+            }
+            &:-ms-input-placeholder { 
+                color: #262529;
+            }
+            &::-ms-input-placeholder {
+                color: #262529;
+            }
+            &:focus {
+                border-color: #1A1919;
+            }
+        }
+        .describe-box {
+            height: 20rem;
+            resize: none;
+        }
+    }
+}
+/*-------------------------
+#.offerte-gegevens-area
+--------------------------*/
+.offerte-right {
+    padding: 2rem;
+    background-color: #F8F8F8;
+    border-radius: .5rem;
+    box-shadow: 1px 1px 3px 0 #e7e7e7;
+    .totalen-items {
+        margin: 0;
+        margin-bottom: 1.5rem;
+        padding: 0;
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+            font-size: 1.6rem;
+            font-weight: 400;
+            text-transform: capitalize;
+            color: #828282;
+            padding: .5rem 0;
+            &:last-child {
+                border-top: 1px solid #dad8d8;
+            }
+            strong {
+                color: #1A1818;
+                font-weight: 700;
+            }
+        }
+    }
+    .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .outlne-btn {
+            width: 48%;
+        }
+    }
+}
+@media (max-width: 991px) {
+    .offerte-right {
+        margin-top: 3rem;
+    }
+    .primary-form {
+        padding: 3rem;
+    }
+}
+@media (max-width: 575px) {
+    .primary-form .form-title {
+        font-size: 2.6rem;
+    }
+    .primary-form {
+        padding: 3rem 2rem;
+    }
+}
+@media (max-width: 360px) {
+    .primary-form .form-title {
+        font-size: 2.4rem;
     }
 }

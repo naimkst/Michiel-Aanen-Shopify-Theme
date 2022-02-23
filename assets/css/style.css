@@ -514,6 +514,7 @@ scrollUp
   display: inline-block;
   padding-top: 10px;
   padding-bottom: 10px;
+  font-size: 1.5rem;
   border-radius: 5px;
   background-color: #141414;
   color: var(--white);
@@ -536,6 +537,7 @@ scrollUp
   border: 1px solid var(--white);
   color: var(--white);
   padding: 9px 15px;
+  font-size: 1.5rem;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
   text-align: center;
@@ -647,6 +649,7 @@ scrollUp
 #.header-area
 --------------------------*/
 .header-area {
+  position: relative;
   background-color: var(--white);
   padding: 2rem 0;
   border-bottom: 1px solid #EAECEE;
@@ -687,6 +690,7 @@ scrollUp
           box-shadow: 2px 30px 50px 0 rgba(0, 0, 0, 0.6);
   padding: 0;
   border: none;
+  top: 58px;
 }
 .header-area .navbar .nav-item.dropdown .navigation-list {
   display: -webkit-box;
@@ -698,6 +702,7 @@ scrollUp
           flex-flow: row wrap;
   max-width: 1320px;
   margin: 0 auto;
+  padding: 3.5rem 0;
 }
 .header-area .navbar .nav-item.dropdown .navigation-list.two-col .single-navigation {
   width: 48%;
@@ -707,62 +712,45 @@ scrollUp
   width: 23%;
   margin: 1%;
 }
-.header-area .navbar .nav-item.dropdown .navigation-list .single-navigation .navigation-link {
-  display: block;
-  width: 100%;
-  padding: 15px;
-  border-radius: 15px;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-  color: #1a1a1a;
-  font-size: 16px;
+.header-area .navbar .nav-item.dropdown .navigation-list .single-navigation ul {
+  margin: 0;
+  padding: 0;
+}
+.header-area .navbar .nav-item.dropdown .navigation-list .single-navigation ul li {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+.header-area .navbar .nav-item.dropdown .navigation-list .single-navigation ul li:last-child {
+  margin-bottom: 0;
+}
+.header-area .navbar .nav-item.dropdown .navigation-list .single-navigation ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.7rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: var(--black);
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
-.header-area .navbar .nav-item.dropdown .navigation-list .single-navigation .navigation-link .nav-image-wrapper {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  border-radius: 1rem;
-  margin-bottom: 2rem;
-  overflow: hidden;
-  z-index: 1;
-}
-.header-area .navbar .nav-item.dropdown .navigation-list .single-navigation .navigation-link .nav-image-wrapper::before {
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 2;
-}
-.header-area .navbar .nav-item.dropdown .navigation-list .single-navigation .navigation-link .nav-image-wrapper img {
-  width: 100%;
-  height: 100%;
+.header-area .navbar .nav-item.dropdown .navigation-list .single-navigation ul li a .item-thumbnail {
+  width: 5.6rem;
+  height: 5.6rem;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  margin-right: 1.5rem;
 }
-.header-area .navbar .nav-item.dropdown .navigation-list .single-navigation .navigation-link .nav-title {
-  font-size: 1.6rem;
-  font-weight: 500;
-  text-transform: capitalize;
-  color: var(--bColor);
+.header-area .navbar .nav-item.dropdown .navigation-list .single-navigation ul li a .item-title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
-.header-area .navbar .nav-item.dropdown .navigation-list .single-navigation .navigation-link .nav-link-details {
-  font-size: 1.4rem;
-  font-weight: 400;
-  margin: 0;
-}
-.header-area .navbar .nav-item.dropdown .navigation-list .single-navigation:hover .navigation-link {
-  background-color: rgba(0, 0, 0, 0.03);
-}
-.header-area .navbar .nav-item.dropdown .navigation-list .single-navigation:hover .navigation-link .nav-image-wrapper img {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+.header-area .navbar .nav-item.dropdown .navigation-list .single-navigation ul li a:hover {
+  color: var(--black);
 }
 .header-area .navbar .nav-item.dropdown .navigation-bottom-bar {
   background-color: #333;
@@ -849,6 +837,10 @@ scrollUp
   font-size: 1.8rem;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+.header-area .header-btn {
+  position: absolute;
+  right: 2rem;
 }
 
 /*-------------------------
@@ -1747,6 +1739,22 @@ scrollUp
   text-transform: capitalize;
 }
 
+@media (max-width: 1650px) {
+  .header-area .header-btn {
+    position: inherit;
+    right: 0;
+    margin-left: 2rem;
+  }
+}
+@media (max-width: 1367px) {
+  .header-area .navbar .nav-item {
+    margin-right: 1.5rem;
+  }
+
+  .header-area .header-btn {
+    margin-left: 1rem;
+  }
+}
 @media (max-width: 1199px) {
   .header-area .navbar .nav-item {
     margin-right: 1rem;
@@ -1799,13 +1807,15 @@ scrollUp
   }
 
   .header-area .navbar .nav-item.dropdown .navigation-list .single-navigation {
-    width: 100%;
+    width: 50%;
     margin: 0;
+    margin-bottom: 2rem;
   }
 
   .header-area .navbar .nav-item.dropdown .navigation-list.two-col .single-navigation {
-    width: 100%;
+    width: 50%;
     margin: 0;
+    margin-bottom: 2rem;
   }
 
   .header-area .navbar .nav-item.dropdown .dropdown-menu {
@@ -1849,6 +1859,13 @@ scrollUp
 
   .header-area .navbar .nav-item.dropdown .navigation-list {
     margin-top: 1rem;
+  }
+
+  .header-area .header-btn {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 1.2rem;
   }
 }
 @media (max-width: 767px) {
@@ -1906,6 +1923,18 @@ scrollUp
   .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     padding-right: 1.5rem;
     padding-left: 1.5rem;
+  }
+
+  .header-area .navbar .nav-item.dropdown .navigation-list .single-navigation ul li a .item-thumbnail {
+    display: none;
+  }
+
+  .header-area .navbar .nav-item.dropdown .navigation-list {
+    padding: 0;
+  }
+
+  .header-area .navbar .nav-item.dropdown .navigation-list .single-navigation ul li a {
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 480px) {
